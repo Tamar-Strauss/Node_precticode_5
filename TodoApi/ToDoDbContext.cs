@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
 
 namespace TodoApi;
 
@@ -9,6 +10,10 @@ public partial class ToDoDbContext : DbContext
     public ToDoDbContext()
     {
     }
+    public List<Item> GetAllItems()
+        {
+            return Items.ToList();
+        }
 
     public ToDoDbContext(DbContextOptions<ToDoDbContext> options)
         : base(options)
