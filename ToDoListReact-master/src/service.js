@@ -1,7 +1,6 @@
 import axios from 'axios';
-axios.defaults.baseURL = "http://localhost:7271";
-
-const apiUrl = "http://localhost:7271"
+axios.defaults.baseURL =process.env.REACT_APP_API_URL;
+const apiUrl =process.env.REACT_APP_API_URL;
 var count=0;
 export default {
   getTasks: async () => {
