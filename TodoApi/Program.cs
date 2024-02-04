@@ -9,12 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 //     c.SwaggerDoc("v1", new OpenApiInfo { Title ="http://localhost:7271", Version = "v1" });
 // });
 // Add services to the container.
-string dbConn = "mysql://uggu50dbnsoysuzw:EBC21bleJYp83nmK8kNN@bibv6actz7zt7hq3mjmp-mysql.services.clever-cloud.com:3306/bibv6actz7zt7hq3mjmp";
+//string dbConn = "mysql://uggu50dbnsoysuzw:EBC21bleJYp83nmK8kNN@bibv6actz7zt7hq3mjmp-mysql.services.clever-cloud.com:3306/bibv6actz7zt7hq3mjmp";
 
-builder.Services.AddDbContext<ToDoDbContext>(options =>
-{
-    options.UseMySql(dbConn, ServerVersion.AutoDetect(dbConn));
-});
+
+builder.Services.AddDbContext<ToDoDBContext>();
 
 // Enable CORS
 builder.Services.AddCors(options =>
