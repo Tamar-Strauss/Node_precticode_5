@@ -12,7 +12,7 @@
 //     console.log('addTask', name)
 //     //TODO
 //     const obj = 
-//       {"id":count++,"name":name,"isComplete":false}
+//       {"id":count++,"name":name,isComplete:false}
 //     const result = await axios.post(`${apiUrl}/Items`, obj, {
 //       headers: {
 //         'Content-Type': 'application/json'
@@ -53,7 +53,9 @@ export default {
     console.log('addTask', name)
     //TODO
     const obj = 
-      {"id":count++,"name":name,"isComplate":false}
+      {id:count++,
+       Name:name,
+       IsComplate:false}
     const result = await axios.post(`${apiUrl}/Items`, obj, {
       headers: {
         'Content-Type': 'application/json'
