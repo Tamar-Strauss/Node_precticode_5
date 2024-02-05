@@ -14,7 +14,7 @@ RUN dotnet restore "TodoApi/TodoApi.csproj"
 
 COPY . .
 WORKDIR "/src/TodoApi"
-RUN dotnet build "TodoApi.csproj" -c $configuration -o /app/build
+RUN dotnet build "./TodoApi.csproj" -c $configuration -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
