@@ -105,7 +105,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using System.Text;
-using ToDoApi;
+using TodoApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
