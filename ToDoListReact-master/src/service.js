@@ -64,16 +64,24 @@ export default {
     return {};
   },
 
-  setCompleted: async (id, isComplete) => {
-    console.log('setCompleted', { id, isComplete })
-    const result = await axios.put(`${apiUrl}/Items/${id}`, isComplete, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    //TODO
-    return result.data;
+    setCompleted: async (id, isComplete) => {
+    const task = {
+      id: id,
+      isComplete: isComplete
+    }
+    const result = await axios.put(`${apiUrl}/Items/${id}`, task).catch(err => err);
+    return result;
   },
+  // setCompleted: async (id, isComplete) => {
+  //   console.log('setCompleted', { id, isComplete })
+  //   const result = await axios.put(`${apiUrl}/Items/${id}`, isComplete, {
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   });
+  //   //TODO
+  //   return result.data;
+  // },
 
   deleteTask: async (idd) => {
     console.log('deleteTask')
